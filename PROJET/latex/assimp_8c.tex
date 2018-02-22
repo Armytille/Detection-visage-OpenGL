@@ -1,0 +1,268 @@
+\hypertarget{assimp_8c}{}\section{assimp.\+c File Reference}
+\label{assimp_8c}\index{assimp.\+c@{assimp.\+c}}
+
+
+utilisation de G\+L4\+Dummies et Lib Assimp pour chargement de scènes.  
+
+
+{\ttfamily \#include $<$G\+L4\+D/gl4duw\+\_\+\+S\+D\+L2.\+h$>$}\\*
+{\ttfamily \#include $<$S\+D\+L\+\_\+image.\+h$>$}\\*
+{\ttfamily \#include $<$assimp/cimport.\+h$>$}\\*
+{\ttfamily \#include $<$assimp/scene.\+h$>$}\\*
+{\ttfamily \#include $<$assimp/postprocess.\+h$>$}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+Include dependency graph for assimp.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{assimp_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{assimp_8c_aa1e54f63f92837dac507492611a6986d}{\+\_\+nb\+\_\+max\+\_\+item}~30
+\item 
+\#define \hyperlink{assimp_8c_ae19f66e94255e323687e3dcdd5362125}{aisgl\+\_\+min}(x,  y)~(x$<$y?x\+:y)
+\item 
+\#define \hyperlink{assimp_8c_a5d7d752ed7ce95f82f595ac2e5e300aa}{aisgl\+\_\+max}(x,  y)~(y$>$x?y\+:x)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{assimp_8c_a2eece74effe5ff11aa569a84e63843ab}{get\+\_\+bounding\+\_\+box\+\_\+for\+\_\+node} (const struct ai\+Node $\ast$nd, struct ai\+Vector3D $\ast$min, struct ai\+Vector3D $\ast$max, struct ai\+Matrix4x4 $\ast$trafo, G\+Luint id)
+\item 
+static void \hyperlink{assimp_8c_a0f8cdb4671df4425602a2392ddbfdc39}{get\+\_\+bounding\+\_\+box} (struct ai\+Vector3D $\ast$min, struct ai\+Vector3D $\ast$max, G\+Luint id)
+\item 
+static void \hyperlink{assimp_8c_af9bda34ebe99a84f2e23617512cdbc91}{color4\+\_\+to\+\_\+float4} (const struct ai\+Color4D $\ast$c, float f\mbox{[}4\mbox{]})
+\item 
+static void \hyperlink{assimp_8c_ac786c5ece13cc71bc1124ba2bfecd31f}{set\+\_\+float4} (float f\mbox{[}4\mbox{]}, float a, float b, float c, float d)
+\item 
+static void \hyperlink{assimp_8c_a8e9bd18ccc4c4ef522837d732764f35b}{apply\+\_\+material} (const struct ai\+Material $\ast$mtl)
+\item 
+static void \hyperlink{assimp_8c_a270f111cfc21a76d5fbdba7f5dcf0b04}{scene\+Mk\+V\+A\+Os} (const struct ai\+Scene $\ast$sc, const struct ai\+Node $\ast$nd, G\+Luint $\ast$ivao, G\+Luint id)
+\item 
+static void \hyperlink{assimp_8c_a5d18bad9b596e4d08568189cf15cdab2}{scene\+Draw\+V\+A\+Os} (const struct ai\+Scene $\ast$sc, const struct ai\+Node $\ast$nd, G\+Luint $\ast$ivao, G\+Luint id)
+\item 
+static int \hyperlink{assimp_8c_a28355c3df9599a33526a2357fc27d611}{scene\+Nb\+Meshes} (const struct ai\+Scene $\ast$sc, const struct ai\+Node $\ast$nd, int subtotal)
+\item 
+static int \hyperlink{assimp_8c_a790a34d309ef3cdea306b092464be9a5}{loadasset} (const char $\ast$path, G\+Luint id)
+\item 
+void \hyperlink{assimp_8c_a05bb0781cb0c80b6585189c94850654a}{assimp\+Init} (const char $\ast$filename, G\+Luint id)
+\begin{DoxyCompactList}\small\item\em modification du Assimp.\+c avec l\textquotesingle{}ajout d\textquotesingle{}un id afin de charger plusieurs objets différents en même temps \end{DoxyCompactList}\item 
+void \hyperlink{assimp_8c_a18a5a0391db704631c22f172fdd23981}{assimp\+Draw\+Scene} (G\+Luint id)
+\item 
+void \hyperlink{assimp_8c_a0c1f6c204843bd061140485cb4387622}{assimp\+Quit} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const struct ai\+Scene $\ast$ \hyperlink{assimp_8c_a78a06589c0da50b28334f43462b9f5f4}{\+\_\+scene} \mbox{[}\hyperlink{assimp_8c_aa1e54f63f92837dac507492611a6986d}{\+\_\+nb\+\_\+max\+\_\+item}\mbox{]}
+\item 
+static struct ai\+Vector3D \hyperlink{assimp_8c_a376ff4bcd2164265d4195259177d1f2e}{\+\_\+scene\+\_\+min} \mbox{[}\hyperlink{assimp_8c_aa1e54f63f92837dac507492611a6986d}{\+\_\+nb\+\_\+max\+\_\+item}\mbox{]}
+\item 
+static struct ai\+Vector3D \hyperlink{assimp_8c_a5ba9f7e2395e09f002de216c46d502d2}{\+\_\+scene\+\_\+max} \mbox{[}\hyperlink{assimp_8c_aa1e54f63f92837dac507492611a6986d}{\+\_\+nb\+\_\+max\+\_\+item}\mbox{]}
+\item 
+static struct ai\+Vector3D \hyperlink{assimp_8c_aed18c244c1ebab879376aabe0f3d9a3e}{\+\_\+scene\+\_\+center} \mbox{[}\hyperlink{assimp_8c_aa1e54f63f92837dac507492611a6986d}{\+\_\+nb\+\_\+max\+\_\+item}\mbox{]}
+\item 
+static G\+Luint $\ast$ \hyperlink{assimp_8c_acf7c96d567c0fcef9ea77572dcfd88af}{\+\_\+vaos} \mbox{[}\hyperlink{assimp_8c_aa1e54f63f92837dac507492611a6986d}{\+\_\+nb\+\_\+max\+\_\+item}\mbox{]}
+\item 
+static G\+Luint $\ast$ \hyperlink{assimp_8c_a35fdd8b2c1e2cf34f7df96e5f92e86a2}{\+\_\+buffers} \mbox{[}\hyperlink{assimp_8c_aa1e54f63f92837dac507492611a6986d}{\+\_\+nb\+\_\+max\+\_\+item}\mbox{]}
+\item 
+static G\+Luint $\ast$ \hyperlink{assimp_8c_a4a8a40d79df302927635f3674ad73394}{\+\_\+counts} \mbox{[}\hyperlink{assimp_8c_aa1e54f63f92837dac507492611a6986d}{\+\_\+nb\+\_\+max\+\_\+item}\mbox{]}
+\item 
+static G\+Luint $\ast$ \hyperlink{assimp_8c_ad1975cc80f02b47a040d4d6a60da6a67}{\+\_\+textures} \mbox{[}\hyperlink{assimp_8c_aa1e54f63f92837dac507492611a6986d}{\+\_\+nb\+\_\+max\+\_\+item}\mbox{]}
+\item 
+static G\+Luint \hyperlink{assimp_8c_a74ba65601d2391c2118eb47882b3b974}{\+\_\+nb\+Meshes} \mbox{[}\hyperlink{assimp_8c_aa1e54f63f92837dac507492611a6986d}{\+\_\+nb\+\_\+max\+\_\+item}\mbox{]}
+\item 
+static G\+Luint \hyperlink{assimp_8c_ac21bd89c19f2293fe4f3b87a09fe285d}{\+\_\+nb\+Textures} \mbox{[}\hyperlink{assimp_8c_aa1e54f63f92837dac507492611a6986d}{\+\_\+nb\+\_\+max\+\_\+item}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+utilisation de G\+L4\+Dummies et Lib Assimp pour chargement de scènes. 
+
+Modification de l\textquotesingle{}exemple fourni par lib Assimp utilisant GL $<$ 3 et G\+L\+UT et upgrade avec utilisation des V\+A\+O/\+V\+BO et matrices et shaders G\+L4dummies.
+
+\begin{DoxyAuthor}{Author}
+Vincent Boyer et Farès Belhadj \{boyer, amsi\}.univ-\/paris8.\+fr 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+February 14 2017 
+\end{DoxyDate}
+
+
+\subsection{Macro Definition Documentation}
+\index{assimp.\+c@{assimp.\+c}!\+\_\+nb\+\_\+max\+\_\+item@{\+\_\+nb\+\_\+max\+\_\+item}}
+\index{\+\_\+nb\+\_\+max\+\_\+item@{\+\_\+nb\+\_\+max\+\_\+item}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+nb\+\_\+max\+\_\+item}{_nb_max_item}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+nb\+\_\+max\+\_\+item~30}\hypertarget{assimp_8c_aa1e54f63f92837dac507492611a6986d}{}\label{assimp_8c_aa1e54f63f92837dac507492611a6986d}
+\index{assimp.\+c@{assimp.\+c}!aisgl\+\_\+max@{aisgl\+\_\+max}}
+\index{aisgl\+\_\+max@{aisgl\+\_\+max}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{aisgl\+\_\+max}{aisgl_max}}]{\setlength{\rightskip}{0pt plus 5cm}\#define aisgl\+\_\+max(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{y}
+\end{DoxyParamCaption}
+)~(y$>$x?y\+:x)}\hypertarget{assimp_8c_a5d7d752ed7ce95f82f595ac2e5e300aa}{}\label{assimp_8c_a5d7d752ed7ce95f82f595ac2e5e300aa}
+\index{assimp.\+c@{assimp.\+c}!aisgl\+\_\+min@{aisgl\+\_\+min}}
+\index{aisgl\+\_\+min@{aisgl\+\_\+min}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{aisgl\+\_\+min}{aisgl_min}}]{\setlength{\rightskip}{0pt plus 5cm}\#define aisgl\+\_\+min(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{y}
+\end{DoxyParamCaption}
+)~(x$<$y?x\+:y)}\hypertarget{assimp_8c_ae19f66e94255e323687e3dcdd5362125}{}\label{assimp_8c_ae19f66e94255e323687e3dcdd5362125}
+
+
+\subsection{Function Documentation}
+\index{assimp.\+c@{assimp.\+c}!apply\+\_\+material@{apply\+\_\+material}}
+\index{apply\+\_\+material@{apply\+\_\+material}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{apply\+\_\+material(const struct ai\+Material $\ast$mtl)}{apply_material(const struct aiMaterial *mtl)}}]{\setlength{\rightskip}{0pt plus 5cm}static void apply\+\_\+material (
+\begin{DoxyParamCaption}
+\item[{const struct ai\+Material $\ast$}]{mtl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_a8e9bd18ccc4c4ef522837d732764f35b}{}\label{assimp_8c_a8e9bd18ccc4c4ef522837d732764f35b}
+\index{assimp.\+c@{assimp.\+c}!assimp\+Draw\+Scene@{assimp\+Draw\+Scene}}
+\index{assimp\+Draw\+Scene@{assimp\+Draw\+Scene}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{assimp\+Draw\+Scene(\+G\+Luint id)}{assimpDrawScene(GLuint id)}}]{\setlength{\rightskip}{0pt plus 5cm}void assimp\+Draw\+Scene (
+\begin{DoxyParamCaption}
+\item[{G\+Luint}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{assimp_8c_a18a5a0391db704631c22f172fdd23981}{}\label{assimp_8c_a18a5a0391db704631c22f172fdd23981}
+\index{assimp.\+c@{assimp.\+c}!assimp\+Init@{assimp\+Init}}
+\index{assimp\+Init@{assimp\+Init}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{assimp\+Init(const char $\ast$filename, G\+Luint id)}{assimpInit(const char *filename, GLuint id)}}]{\setlength{\rightskip}{0pt plus 5cm}void assimp\+Init (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename, }
+\item[{G\+Luint}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{assimp_8c_a05bb0781cb0c80b6585189c94850654a}{}\label{assimp_8c_a05bb0781cb0c80b6585189c94850654a}
+
+
+modification du Assimp.\+c avec l\textquotesingle{}ajout d\textquotesingle{}un id afin de charger plusieurs objets différents en même temps 
+
+
+\begin{DoxyParams}{Parameters}
+{\em le} & nom du fichier objet
+\begin{DoxyItemize}
+\item l\textquotesingle{}id de l\textquotesingle{}objet (un G\+Luint qui permet de différencier nos objets entre eux) 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\index{assimp.\+c@{assimp.\+c}!assimp\+Quit@{assimp\+Quit}}
+\index{assimp\+Quit@{assimp\+Quit}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{assimp\+Quit(void)}{assimpQuit(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void assimp\+Quit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{assimp_8c_a0c1f6c204843bd061140485cb4387622}{}\label{assimp_8c_a0c1f6c204843bd061140485cb4387622}
+\index{assimp.\+c@{assimp.\+c}!color4\+\_\+to\+\_\+float4@{color4\+\_\+to\+\_\+float4}}
+\index{color4\+\_\+to\+\_\+float4@{color4\+\_\+to\+\_\+float4}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{color4\+\_\+to\+\_\+float4(const struct ai\+Color4\+D $\ast$c, float f[4])}{color4_to_float4(const struct aiColor4D *c, float f[4])}}]{\setlength{\rightskip}{0pt plus 5cm}static void color4\+\_\+to\+\_\+float4 (
+\begin{DoxyParamCaption}
+\item[{const struct ai\+Color4D $\ast$}]{c, }
+\item[{float}]{f\mbox{[}4\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_af9bda34ebe99a84f2e23617512cdbc91}{}\label{assimp_8c_af9bda34ebe99a84f2e23617512cdbc91}
+\index{assimp.\+c@{assimp.\+c}!get\+\_\+bounding\+\_\+box@{get\+\_\+bounding\+\_\+box}}
+\index{get\+\_\+bounding\+\_\+box@{get\+\_\+bounding\+\_\+box}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{get\+\_\+bounding\+\_\+box(struct ai\+Vector3\+D $\ast$min, struct ai\+Vector3\+D $\ast$max, G\+Luint id)}{get_bounding_box(struct aiVector3D *min, struct aiVector3D *max, GLuint id)}}]{\setlength{\rightskip}{0pt plus 5cm}static void get\+\_\+bounding\+\_\+box (
+\begin{DoxyParamCaption}
+\item[{struct ai\+Vector3D $\ast$}]{min, }
+\item[{struct ai\+Vector3D $\ast$}]{max, }
+\item[{G\+Luint}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_a0f8cdb4671df4425602a2392ddbfdc39}{}\label{assimp_8c_a0f8cdb4671df4425602a2392ddbfdc39}
+\index{assimp.\+c@{assimp.\+c}!get\+\_\+bounding\+\_\+box\+\_\+for\+\_\+node@{get\+\_\+bounding\+\_\+box\+\_\+for\+\_\+node}}
+\index{get\+\_\+bounding\+\_\+box\+\_\+for\+\_\+node@{get\+\_\+bounding\+\_\+box\+\_\+for\+\_\+node}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{get\+\_\+bounding\+\_\+box\+\_\+for\+\_\+node(const struct ai\+Node $\ast$nd, struct ai\+Vector3\+D $\ast$min, struct ai\+Vector3\+D $\ast$max, struct ai\+Matrix4x4 $\ast$trafo, G\+Luint id)}{get_bounding_box_for_node(const struct aiNode *nd, struct aiVector3D *min, struct aiVector3D *max, struct aiMatrix4x4 *trafo, GLuint id)}}]{\setlength{\rightskip}{0pt plus 5cm}static void get\+\_\+bounding\+\_\+box\+\_\+for\+\_\+node (
+\begin{DoxyParamCaption}
+\item[{const struct ai\+Node $\ast$}]{nd, }
+\item[{struct ai\+Vector3D $\ast$}]{min, }
+\item[{struct ai\+Vector3D $\ast$}]{max, }
+\item[{struct ai\+Matrix4x4 $\ast$}]{trafo, }
+\item[{G\+Luint}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_a2eece74effe5ff11aa569a84e63843ab}{}\label{assimp_8c_a2eece74effe5ff11aa569a84e63843ab}
+\index{assimp.\+c@{assimp.\+c}!loadasset@{loadasset}}
+\index{loadasset@{loadasset}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{loadasset(const char $\ast$path, G\+Luint id)}{loadasset(const char *path, GLuint id)}}]{\setlength{\rightskip}{0pt plus 5cm}static int loadasset (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path, }
+\item[{G\+Luint}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_a790a34d309ef3cdea306b092464be9a5}{}\label{assimp_8c_a790a34d309ef3cdea306b092464be9a5}
+\index{assimp.\+c@{assimp.\+c}!scene\+Draw\+V\+A\+Os@{scene\+Draw\+V\+A\+Os}}
+\index{scene\+Draw\+V\+A\+Os@{scene\+Draw\+V\+A\+Os}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{scene\+Draw\+V\+A\+Os(const struct ai\+Scene $\ast$sc, const struct ai\+Node $\ast$nd, G\+Luint $\ast$ivao, G\+Luint id)}{sceneDrawVAOs(const struct aiScene *sc, const struct aiNode *nd, GLuint *ivao, GLuint id)}}]{\setlength{\rightskip}{0pt plus 5cm}static void scene\+Draw\+V\+A\+Os (
+\begin{DoxyParamCaption}
+\item[{const struct ai\+Scene $\ast$}]{sc, }
+\item[{const struct ai\+Node $\ast$}]{nd, }
+\item[{G\+Luint $\ast$}]{ivao, }
+\item[{G\+Luint}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_a5d18bad9b596e4d08568189cf15cdab2}{}\label{assimp_8c_a5d18bad9b596e4d08568189cf15cdab2}
+\index{assimp.\+c@{assimp.\+c}!scene\+Mk\+V\+A\+Os@{scene\+Mk\+V\+A\+Os}}
+\index{scene\+Mk\+V\+A\+Os@{scene\+Mk\+V\+A\+Os}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{scene\+Mk\+V\+A\+Os(const struct ai\+Scene $\ast$sc, const struct ai\+Node $\ast$nd, G\+Luint $\ast$ivao, G\+Luint id)}{sceneMkVAOs(const struct aiScene *sc, const struct aiNode *nd, GLuint *ivao, GLuint id)}}]{\setlength{\rightskip}{0pt plus 5cm}static void scene\+Mk\+V\+A\+Os (
+\begin{DoxyParamCaption}
+\item[{const struct ai\+Scene $\ast$}]{sc, }
+\item[{const struct ai\+Node $\ast$}]{nd, }
+\item[{G\+Luint $\ast$}]{ivao, }
+\item[{G\+Luint}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_a270f111cfc21a76d5fbdba7f5dcf0b04}{}\label{assimp_8c_a270f111cfc21a76d5fbdba7f5dcf0b04}
+\index{assimp.\+c@{assimp.\+c}!scene\+Nb\+Meshes@{scene\+Nb\+Meshes}}
+\index{scene\+Nb\+Meshes@{scene\+Nb\+Meshes}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{scene\+Nb\+Meshes(const struct ai\+Scene $\ast$sc, const struct ai\+Node $\ast$nd, int subtotal)}{sceneNbMeshes(const struct aiScene *sc, const struct aiNode *nd, int subtotal)}}]{\setlength{\rightskip}{0pt plus 5cm}static int scene\+Nb\+Meshes (
+\begin{DoxyParamCaption}
+\item[{const struct ai\+Scene $\ast$}]{sc, }
+\item[{const struct ai\+Node $\ast$}]{nd, }
+\item[{int}]{subtotal}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_a28355c3df9599a33526a2357fc27d611}{}\label{assimp_8c_a28355c3df9599a33526a2357fc27d611}
+\index{assimp.\+c@{assimp.\+c}!set\+\_\+float4@{set\+\_\+float4}}
+\index{set\+\_\+float4@{set\+\_\+float4}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{set\+\_\+float4(float f[4], float a, float b, float c, float d)}{set_float4(float f[4], float a, float b, float c, float d)}}]{\setlength{\rightskip}{0pt plus 5cm}static void set\+\_\+float4 (
+\begin{DoxyParamCaption}
+\item[{float}]{f\mbox{[}4\mbox{]}, }
+\item[{float}]{a, }
+\item[{float}]{b, }
+\item[{float}]{c, }
+\item[{float}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_ac786c5ece13cc71bc1124ba2bfecd31f}{}\label{assimp_8c_ac786c5ece13cc71bc1124ba2bfecd31f}
+
+
+\subsection{Variable Documentation}
+\index{assimp.\+c@{assimp.\+c}!\+\_\+buffers@{\+\_\+buffers}}
+\index{\+\_\+buffers@{\+\_\+buffers}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+buffers}{_buffers}}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint $\ast$ \+\_\+buffers\mbox{[}{\bf \+\_\+nb\+\_\+max\+\_\+item}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_a35fdd8b2c1e2cf34f7df96e5f92e86a2}{}\label{assimp_8c_a35fdd8b2c1e2cf34f7df96e5f92e86a2}
+\index{assimp.\+c@{assimp.\+c}!\+\_\+counts@{\+\_\+counts}}
+\index{\+\_\+counts@{\+\_\+counts}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+counts}{_counts}}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint $\ast$ \+\_\+counts\mbox{[}{\bf \+\_\+nb\+\_\+max\+\_\+item}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_a4a8a40d79df302927635f3674ad73394}{}\label{assimp_8c_a4a8a40d79df302927635f3674ad73394}
+\index{assimp.\+c@{assimp.\+c}!\+\_\+nb\+Meshes@{\+\_\+nb\+Meshes}}
+\index{\+\_\+nb\+Meshes@{\+\_\+nb\+Meshes}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+nb\+Meshes}{_nbMeshes}}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint \+\_\+nb\+Meshes\mbox{[}{\bf \+\_\+nb\+\_\+max\+\_\+item}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_a74ba65601d2391c2118eb47882b3b974}{}\label{assimp_8c_a74ba65601d2391c2118eb47882b3b974}
+\index{assimp.\+c@{assimp.\+c}!\+\_\+nb\+Textures@{\+\_\+nb\+Textures}}
+\index{\+\_\+nb\+Textures@{\+\_\+nb\+Textures}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+nb\+Textures}{_nbTextures}}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint \+\_\+nb\+Textures\mbox{[}{\bf \+\_\+nb\+\_\+max\+\_\+item}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_ac21bd89c19f2293fe4f3b87a09fe285d}{}\label{assimp_8c_ac21bd89c19f2293fe4f3b87a09fe285d}
+\index{assimp.\+c@{assimp.\+c}!\+\_\+scene@{\+\_\+scene}}
+\index{\+\_\+scene@{\+\_\+scene}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+scene}{_scene}}]{\setlength{\rightskip}{0pt plus 5cm}const struct ai\+Scene$\ast$ \+\_\+scene\mbox{[}{\bf \+\_\+nb\+\_\+max\+\_\+item}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_a78a06589c0da50b28334f43462b9f5f4}{}\label{assimp_8c_a78a06589c0da50b28334f43462b9f5f4}
+\index{assimp.\+c@{assimp.\+c}!\+\_\+scene\+\_\+center@{\+\_\+scene\+\_\+center}}
+\index{\+\_\+scene\+\_\+center@{\+\_\+scene\+\_\+center}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+scene\+\_\+center}{_scene_center}}]{\setlength{\rightskip}{0pt plus 5cm}struct ai\+Vector3D \+\_\+scene\+\_\+center\mbox{[}{\bf \+\_\+nb\+\_\+max\+\_\+item}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_aed18c244c1ebab879376aabe0f3d9a3e}{}\label{assimp_8c_aed18c244c1ebab879376aabe0f3d9a3e}
+\index{assimp.\+c@{assimp.\+c}!\+\_\+scene\+\_\+max@{\+\_\+scene\+\_\+max}}
+\index{\+\_\+scene\+\_\+max@{\+\_\+scene\+\_\+max}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+scene\+\_\+max}{_scene_max}}]{\setlength{\rightskip}{0pt plus 5cm}struct ai\+Vector3D \+\_\+scene\+\_\+max\mbox{[}{\bf \+\_\+nb\+\_\+max\+\_\+item}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_a5ba9f7e2395e09f002de216c46d502d2}{}\label{assimp_8c_a5ba9f7e2395e09f002de216c46d502d2}
+\index{assimp.\+c@{assimp.\+c}!\+\_\+scene\+\_\+min@{\+\_\+scene\+\_\+min}}
+\index{\+\_\+scene\+\_\+min@{\+\_\+scene\+\_\+min}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+scene\+\_\+min}{_scene_min}}]{\setlength{\rightskip}{0pt plus 5cm}struct ai\+Vector3D \+\_\+scene\+\_\+min\mbox{[}{\bf \+\_\+nb\+\_\+max\+\_\+item}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_a376ff4bcd2164265d4195259177d1f2e}{}\label{assimp_8c_a376ff4bcd2164265d4195259177d1f2e}
+\index{assimp.\+c@{assimp.\+c}!\+\_\+textures@{\+\_\+textures}}
+\index{\+\_\+textures@{\+\_\+textures}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+textures}{_textures}}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint $\ast$ \+\_\+textures\mbox{[}{\bf \+\_\+nb\+\_\+max\+\_\+item}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_ad1975cc80f02b47a040d4d6a60da6a67}{}\label{assimp_8c_ad1975cc80f02b47a040d4d6a60da6a67}
+\index{assimp.\+c@{assimp.\+c}!\+\_\+vaos@{\+\_\+vaos}}
+\index{\+\_\+vaos@{\+\_\+vaos}!assimp.\+c@{assimp.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+vaos}{_vaos}}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint$\ast$ \+\_\+vaos\mbox{[}{\bf \+\_\+nb\+\_\+max\+\_\+item}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{assimp_8c_acf7c96d567c0fcef9ea77572dcfd88af}{}\label{assimp_8c_acf7c96d567c0fcef9ea77572dcfd88af}

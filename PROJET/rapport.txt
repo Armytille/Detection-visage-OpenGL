@@ -1,0 +1,9 @@
+Ce projet a été fait en un temps record (la veille pour le lendemain… Je ne suis pas fier de le dire…). Aussi, c’est bâclé il faut bien l’admettre.
+
+Ici, on charge des .obj avec la bibliothèque assimp, on récupère le flux vidéo de la caméra avec opencv, et enfin à l’aide de CascadeClassifier et des .xml qui gèrent la détection d’éléments du visage (dans notre cas, le visage et le nez) on essaye de placer une paire de lunettes et une moustache (plus ou moins au bon endroit).
+
+La détection est assez hasardeuse, il faut correctement se placer devant sa caméra pour espérer avoir un résultat satisfaisant. La difficulté est de transformer les coordonnées de la caméra en coordonnées OpenGL. Nous avons essayé d’opérer la même transformation que pour les coordonnées de la souris mais force est de constater que les coordonnées de la caméra sont encore différentes de celles de la souris… A partir de la on a bricolé… On a aussi rencontré un problème de système d’exploitation. Sur MacOS et sur Ubuntu, les résultats sont totalement différents et il faut changer les formules. La présente version fonctionne sur Mac.
+
+
+ZARCA Dan
+MAHOT Antoine

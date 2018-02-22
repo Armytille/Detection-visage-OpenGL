@@ -1,0 +1,288 @@
+\hypertarget{window_8cpp}{}\section{window.\+cpp File Reference}
+\label{window_8cpp}\index{window.\+cpp@{window.\+cpp}}
+{\ttfamily \#include $<$opencv2/core/core.\+hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/highgui/highgui.\+hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/imgproc/imgproc.\+hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/objdetect.\+hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/videoio/videoio\+\_\+c.\+h$>$}\\*
+{\ttfamily \#include $<$opencv2/opencv.\+hpp$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$G\+L4\+D/gl4du.\+h$>$}\\*
+{\ttfamily \#include $<$G\+L4\+D/gl4dg.\+h$>$}\\*
+{\ttfamily \#include $<$G\+L4\+D/gl4duw\+\_\+\+S\+D\+L2.\+h$>$}\\*
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L\+\_\+image.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}assimp.\+h\char`\"{}}\\*
+Include dependency graph for window.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{window_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static S\+D\+L\+\_\+\+Window $\ast$ \hyperlink{window_8cpp_a181784b514f1d71a5a7573068e7228be}{init\+Window} (int w, int h, S\+D\+L\+\_\+\+G\+L\+Context $\ast$pogl\+Context)
+\item 
+static void \hyperlink{window_8cpp_ac6d84025d3d3d48e5f7e418f877bd574}{init\+GL} (S\+D\+L\+\_\+\+Window $\ast$win)
+\begin{DoxyCompactList}\small\item\em Cette fonction initialise les paramètres Open\+GL. \end{DoxyCompactList}\item 
+static void \hyperlink{window_8cpp_ad6169536f88b2f942555ab20445c35bc}{init\+Data} (void)
+\item 
+static void \hyperlink{window_8cpp_a28d5ce82194141dd9dd4b874f6a8e0e9}{resize\+GL} (S\+D\+L\+\_\+\+Window $\ast$win)
+\begin{DoxyCompactList}\small\item\em Cette fonction paramétrela vue (view\+Port) Open\+GL en fonction des dimensions de la fenêtre S\+DL pointée par {\itshape win}. \end{DoxyCompactList}\item 
+static void \hyperlink{window_8cpp_a67a338c6f0e35065e524006b419fc1dd}{loop} (S\+D\+L\+\_\+\+Window $\ast$win)
+\begin{DoxyCompactList}\small\item\em Boucle infinie principale \+: gère les évènements, dessine, imprime le F\+PS et swap les buffers. \end{DoxyCompactList}\item 
+static void \hyperlink{window_8cpp_a96a68ee53ffcf494ca60f94ac05d94bb}{draw} (void)
+\begin{DoxyCompactList}\small\item\em dessine dans le contexte Open\+GL actif. \end{DoxyCompactList}\item 
+static void \hyperlink{window_8cpp_ae38367d7a4d4121f6d1693d61f7f905a}{quit} (void)
+\begin{DoxyCompactList}\small\item\em appelée au moment de sortir du programme (atexit), libère les éléments utilisés \end{DoxyCompactList}\item 
+static void \hyperlink{window_8cpp_a0c66ed924433ae3fd48567923eb68f8b}{translate\+\_\+coord} (G\+Lfloat $\ast$ip, int xm, int ym)
+\begin{DoxyCompactList}\small\item\em traduit les coordonnees renvoyées par vector$<$\+Rect$>$, en coordonnees exploitables par le contexte Open\+GL. \end{DoxyCompactList}\item 
+void \hyperlink{window_8cpp_a078cb023299d74a3abc79d470c261d7f}{assimp\+Objet} (G\+Lfloat x, G\+Lfloat y, G\+Lfloat z, G\+Lfloat theta, G\+Luint id)
+\begin{DoxyCompactList}\small\item\em fonction qui dessine un object assimp \end{DoxyCompactList}\item 
+int \hyperlink{window_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static Cascade\+Classifier $\ast$ \hyperlink{window_8cpp_aef4b6d90b88c97e5c0ebf6c910513e6f}{face\+\_\+cc}
+\item 
+static Cascade\+Classifier $\ast$ \hyperlink{window_8cpp_a63dae8d0c40b453b371706b9e5e1b308}{eye\+\_\+cc}
+\item 
+static Cascade\+Classifier $\ast$ \hyperlink{window_8cpp_a03598e8e75d3a25756e1411bf559beb4}{nose\+\_\+cc}
+\item 
+static Mat \hyperlink{window_8cpp_a5edc9131429837d9b41dadc7a1cc7ee1}{camera\+Frame}
+\item 
+static int \hyperlink{window_8cpp_ac3fccedccc56d04d622b5745485a7568}{\+\_\+window\+Width} = 800
+\begin{DoxyCompactList}\small\item\em dimensions de la fenêtre \end{DoxyCompactList}\item 
+static int \hyperlink{window_8cpp_a5b25a069d46e2c8963f7a855f6a3582c}{\+\_\+window\+Height} = 600
+\item 
+static S\+D\+L\+\_\+\+Window $\ast$ \hyperlink{window_8cpp_a7178561b494fec72d25dda65624cbaad}{\+\_\+win} = N\+U\+LL
+\begin{DoxyCompactList}\small\item\em pointeur vers la (future) fenêtre S\+DL \end{DoxyCompactList}\item 
+static S\+D\+L\+\_\+\+G\+L\+Context \hyperlink{window_8cpp_a6663227b3085cc2fc62d845252017d7a}{\+\_\+ogl\+Context} = N\+U\+LL
+\begin{DoxyCompactList}\small\item\em pointeur vers le (futur) contexte Open\+GL \end{DoxyCompactList}\item 
+static G\+Luint \hyperlink{window_8cpp_ac1f4a1f92760da28a17a070c2a1aca23}{\+\_\+vao} = 0
+\begin{DoxyCompactList}\small\item\em identifiant du (futur) vertex array object \end{DoxyCompactList}\item 
+static G\+Luint \hyperlink{window_8cpp_a7437445160e76b84bd1e01368ec976da}{\+\_\+buffer} = 0
+\begin{DoxyCompactList}\small\item\em identifiant du (futur) buffer de data \end{DoxyCompactList}\item 
+static G\+Luint \hyperlink{window_8cpp_ac7ef75a87c3fccc7a1350bfc7167b5d5}{\+\_\+p\+Id} = 0
+\begin{DoxyCompactList}\small\item\em identifiants des (futurs) G\+L\+SL programs \end{DoxyCompactList}\item 
+static G\+Luint \hyperlink{window_8cpp_ac5b39e53d543f4ff963671f66d726665}{\+\_\+obj\+\_\+p\+Id} = 0
+\item 
+static G\+Luint \hyperlink{window_8cpp_ab084f8bfaed48bc9a6886602353d42e2}{\+\_\+t\+Id} = 0
+\begin{DoxyCompactList}\small\item\em identifiant de la texture chargée \end{DoxyCompactList}\item 
+static Video\+Capture $\ast$ \hyperlink{window_8cpp_a6dac95f98f7d2e9b479c55da65fa5120}{camera} = N\+U\+LL
+\begin{DoxyCompactList}\small\item\em device de capture vidéo \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{window.\+cpp@{window.\+cpp}!assimp\+Objet@{assimp\+Objet}}
+\index{assimp\+Objet@{assimp\+Objet}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{assimp\+Objet(\+G\+Lfloat x, G\+Lfloat y, G\+Lfloat z, G\+Lfloat theta, G\+Luint id)}{assimpObjet(GLfloat x, GLfloat y, GLfloat z, GLfloat theta, GLuint id)}}]{\setlength{\rightskip}{0pt plus 5cm}void assimp\+Objet (
+\begin{DoxyParamCaption}
+\item[{G\+Lfloat}]{x, }
+\item[{G\+Lfloat}]{y, }
+\item[{G\+Lfloat}]{z, }
+\item[{G\+Lfloat}]{theta, }
+\item[{G\+Luint}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{window_8cpp_a078cb023299d74a3abc79d470c261d7f}{}\label{window_8cpp_a078cb023299d74a3abc79d470c261d7f}
+
+
+fonction qui dessine un object assimp 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x,y,z,theta} & et l\textquotesingle{}id de notre object \\
+\hline
+\end{DoxyParams}
+\index{window.\+cpp@{window.\+cpp}!draw@{draw}}
+\index{draw@{draw}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{draw(void)}{draw(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void draw (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_a96a68ee53ffcf494ca60f94ac05d94bb}{}\label{window_8cpp_a96a68ee53ffcf494ca60f94ac05d94bb}
+
+
+dessine dans le contexte Open\+GL actif. 
+
+\index{window.\+cpp@{window.\+cpp}!init\+Data@{init\+Data}}
+\index{init\+Data@{init\+Data}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{init\+Data(void)}{initData(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void init\+Data (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_ad6169536f88b2f942555ab20445c35bc}{}\label{window_8cpp_ad6169536f88b2f942555ab20445c35bc}
+\index{window.\+cpp@{window.\+cpp}!init\+GL@{init\+GL}}
+\index{init\+GL@{init\+GL}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{init\+G\+L(\+S\+D\+L\+\_\+\+Window $\ast$win)}{initGL(SDL_Window *win)}}]{\setlength{\rightskip}{0pt plus 5cm}static void init\+GL (
+\begin{DoxyParamCaption}
+\item[{S\+D\+L\+\_\+\+Window $\ast$}]{win}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_ac6d84025d3d3d48e5f7e418f877bd574}{}\label{window_8cpp_ac6d84025d3d3d48e5f7e418f877bd574}
+
+
+Cette fonction initialise les paramètres Open\+GL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & le pointeur vers la fenêtre S\+DL pour laquelle nous avons attaché le contexte Open\+GL. \\
+\hline
+\end{DoxyParams}
+\index{window.\+cpp@{window.\+cpp}!init\+Window@{init\+Window}}
+\index{init\+Window@{init\+Window}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{init\+Window(int w, int h, S\+D\+L\+\_\+\+G\+L\+Context $\ast$pogl\+Context)}{initWindow(int w, int h, SDL_GLContext *poglContext)}}]{\setlength{\rightskip}{0pt plus 5cm}static S\+D\+L\+\_\+\+Window $\ast$ init\+Window (
+\begin{DoxyParamCaption}
+\item[{int}]{w, }
+\item[{int}]{h, }
+\item[{S\+D\+L\+\_\+\+G\+L\+Context $\ast$}]{pogl\+Context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_a181784b514f1d71a5a7573068e7228be}{}\label{window_8cpp_a181784b514f1d71a5a7573068e7228be}
+\index{window.\+cpp@{window.\+cpp}!loop@{loop}}
+\index{loop@{loop}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{loop(\+S\+D\+L\+\_\+\+Window $\ast$win)}{loop(SDL_Window *win)}}]{\setlength{\rightskip}{0pt plus 5cm}static void loop (
+\begin{DoxyParamCaption}
+\item[{S\+D\+L\+\_\+\+Window $\ast$}]{win}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_a67a338c6f0e35065e524006b419fc1dd}{}\label{window_8cpp_a67a338c6f0e35065e524006b419fc1dd}
+
+
+Boucle infinie principale \+: gère les évènements, dessine, imprime le F\+PS et swap les buffers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & le pointeur vers la fenêtre S\+DL pour laquelle nous avons attaché le contexte Open\+GL. \\
+\hline
+\end{DoxyParams}
+\index{window.\+cpp@{window.\+cpp}!main@{main}}
+\index{main@{main}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$$\ast$argv)}{main(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\hypertarget{window_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{window_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+\index{window.\+cpp@{window.\+cpp}!quit@{quit}}
+\index{quit@{quit}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{quit(void)}{quit(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void quit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_ae38367d7a4d4121f6d1693d61f7f905a}{}\label{window_8cpp_ae38367d7a4d4121f6d1693d61f7f905a}
+
+
+appelée au moment de sortir du programme (atexit), libère les éléments utilisés 
+
+\index{window.\+cpp@{window.\+cpp}!resize\+GL@{resize\+GL}}
+\index{resize\+GL@{resize\+GL}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{resize\+G\+L(\+S\+D\+L\+\_\+\+Window $\ast$win)}{resizeGL(SDL_Window *win)}}]{\setlength{\rightskip}{0pt plus 5cm}static void resize\+GL (
+\begin{DoxyParamCaption}
+\item[{S\+D\+L\+\_\+\+Window $\ast$}]{win}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_a28d5ce82194141dd9dd4b874f6a8e0e9}{}\label{window_8cpp_a28d5ce82194141dd9dd4b874f6a8e0e9}
+
+
+Cette fonction paramétrela vue (view\+Port) Open\+GL en fonction des dimensions de la fenêtre S\+DL pointée par {\itshape win}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & le pointeur vers la fenêtre S\+DL pour laquelle nous avons attaché le contexte Open\+GL. \\
+\hline
+\end{DoxyParams}
+\index{window.\+cpp@{window.\+cpp}!translate\+\_\+coord@{translate\+\_\+coord}}
+\index{translate\+\_\+coord@{translate\+\_\+coord}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{translate\+\_\+coord(\+G\+Lfloat $\ast$ip, int xm, int ym)}{translate_coord(GLfloat *ip, int xm, int ym)}}]{\setlength{\rightskip}{0pt plus 5cm}static void translate\+\_\+coord (
+\begin{DoxyParamCaption}
+\item[{G\+Lfloat $\ast$}]{ip, }
+\item[{int}]{xm, }
+\item[{int}]{ym}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_a0c66ed924433ae3fd48567923eb68f8b}{}\label{window_8cpp_a0c66ed924433ae3fd48567923eb68f8b}
+
+
+traduit les coordonnees renvoyées par vector$<$\+Rect$>$, en coordonnees exploitables par le contexte Open\+GL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointeur} & ip\+: tableau contenant le x,y et z que l\textquotesingle{}on rempli dans la fonction valeur x de Rect valeur y de Rect \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\index{window.\+cpp@{window.\+cpp}!\+\_\+buffer@{\+\_\+buffer}}
+\index{\+\_\+buffer@{\+\_\+buffer}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+buffer}{_buffer}}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint \+\_\+buffer = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_a7437445160e76b84bd1e01368ec976da}{}\label{window_8cpp_a7437445160e76b84bd1e01368ec976da}
+
+
+identifiant du (futur) buffer de data 
+
+\index{window.\+cpp@{window.\+cpp}!\+\_\+obj\+\_\+p\+Id@{\+\_\+obj\+\_\+p\+Id}}
+\index{\+\_\+obj\+\_\+p\+Id@{\+\_\+obj\+\_\+p\+Id}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+obj\+\_\+p\+Id}{_obj_pId}}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint \+\_\+obj\+\_\+p\+Id = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_ac5b39e53d543f4ff963671f66d726665}{}\label{window_8cpp_ac5b39e53d543f4ff963671f66d726665}
+\index{window.\+cpp@{window.\+cpp}!\+\_\+ogl\+Context@{\+\_\+ogl\+Context}}
+\index{\+\_\+ogl\+Context@{\+\_\+ogl\+Context}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+ogl\+Context}{_oglContext}}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+G\+L\+Context \+\_\+ogl\+Context = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_a6663227b3085cc2fc62d845252017d7a}{}\label{window_8cpp_a6663227b3085cc2fc62d845252017d7a}
+
+
+pointeur vers le (futur) contexte Open\+GL 
+
+\index{window.\+cpp@{window.\+cpp}!\+\_\+p\+Id@{\+\_\+p\+Id}}
+\index{\+\_\+p\+Id@{\+\_\+p\+Id}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+p\+Id}{_pId}}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint \+\_\+p\+Id = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_ac7ef75a87c3fccc7a1350bfc7167b5d5}{}\label{window_8cpp_ac7ef75a87c3fccc7a1350bfc7167b5d5}
+
+
+identifiants des (futurs) G\+L\+SL programs 
+
+\index{window.\+cpp@{window.\+cpp}!\+\_\+t\+Id@{\+\_\+t\+Id}}
+\index{\+\_\+t\+Id@{\+\_\+t\+Id}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+t\+Id}{_tId}}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint \+\_\+t\+Id = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_ab084f8bfaed48bc9a6886602353d42e2}{}\label{window_8cpp_ab084f8bfaed48bc9a6886602353d42e2}
+
+
+identifiant de la texture chargée 
+
+\index{window.\+cpp@{window.\+cpp}!\+\_\+vao@{\+\_\+vao}}
+\index{\+\_\+vao@{\+\_\+vao}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+vao}{_vao}}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint \+\_\+vao = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_ac1f4a1f92760da28a17a070c2a1aca23}{}\label{window_8cpp_ac1f4a1f92760da28a17a070c2a1aca23}
+
+
+identifiant du (futur) vertex array object 
+
+\index{window.\+cpp@{window.\+cpp}!\+\_\+win@{\+\_\+win}}
+\index{\+\_\+win@{\+\_\+win}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+win}{_win}}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+Window$\ast$ \+\_\+win = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_a7178561b494fec72d25dda65624cbaad}{}\label{window_8cpp_a7178561b494fec72d25dda65624cbaad}
+
+
+pointeur vers la (future) fenêtre S\+DL 
+
+\index{window.\+cpp@{window.\+cpp}!\+\_\+window\+Height@{\+\_\+window\+Height}}
+\index{\+\_\+window\+Height@{\+\_\+window\+Height}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+window\+Height}{_windowHeight}}]{\setlength{\rightskip}{0pt plus 5cm}int \+\_\+window\+Height = 600\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_a5b25a069d46e2c8963f7a855f6a3582c}{}\label{window_8cpp_a5b25a069d46e2c8963f7a855f6a3582c}
+\index{window.\+cpp@{window.\+cpp}!\+\_\+window\+Width@{\+\_\+window\+Width}}
+\index{\+\_\+window\+Width@{\+\_\+window\+Width}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+window\+Width}{_windowWidth}}]{\setlength{\rightskip}{0pt plus 5cm}int \+\_\+window\+Width = 800\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_ac3fccedccc56d04d622b5745485a7568}{}\label{window_8cpp_ac3fccedccc56d04d622b5745485a7568}
+
+
+dimensions de la fenêtre 
+
+\index{window.\+cpp@{window.\+cpp}!camera@{camera}}
+\index{camera@{camera}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{camera}{camera}}]{\setlength{\rightskip}{0pt plus 5cm}Video\+Capture$\ast$ camera = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_a6dac95f98f7d2e9b479c55da65fa5120}{}\label{window_8cpp_a6dac95f98f7d2e9b479c55da65fa5120}
+
+
+device de capture vidéo 
+
+\index{window.\+cpp@{window.\+cpp}!camera\+Frame@{camera\+Frame}}
+\index{camera\+Frame@{camera\+Frame}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{camera\+Frame}{cameraFrame}}]{\setlength{\rightskip}{0pt plus 5cm}Mat camera\+Frame\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_a5edc9131429837d9b41dadc7a1cc7ee1}{}\label{window_8cpp_a5edc9131429837d9b41dadc7a1cc7ee1}
+\index{window.\+cpp@{window.\+cpp}!eye\+\_\+cc@{eye\+\_\+cc}}
+\index{eye\+\_\+cc@{eye\+\_\+cc}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{eye\+\_\+cc}{eye_cc}}]{\setlength{\rightskip}{0pt plus 5cm}Cascade\+Classifier$\ast$ eye\+\_\+cc\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_a63dae8d0c40b453b371706b9e5e1b308}{}\label{window_8cpp_a63dae8d0c40b453b371706b9e5e1b308}
+\index{window.\+cpp@{window.\+cpp}!face\+\_\+cc@{face\+\_\+cc}}
+\index{face\+\_\+cc@{face\+\_\+cc}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{face\+\_\+cc}{face_cc}}]{\setlength{\rightskip}{0pt plus 5cm}Cascade\+Classifier$\ast$ face\+\_\+cc\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_aef4b6d90b88c97e5c0ebf6c910513e6f}{}\label{window_8cpp_aef4b6d90b88c97e5c0ebf6c910513e6f}
+\index{window.\+cpp@{window.\+cpp}!nose\+\_\+cc@{nose\+\_\+cc}}
+\index{nose\+\_\+cc@{nose\+\_\+cc}!window.\+cpp@{window.\+cpp}}
+\subsubsection[{\texorpdfstring{nose\+\_\+cc}{nose_cc}}]{\setlength{\rightskip}{0pt plus 5cm}Cascade\+Classifier$\ast$ nose\+\_\+cc\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{window_8cpp_a03598e8e75d3a25756e1411bf559beb4}{}\label{window_8cpp_a03598e8e75d3a25756e1411bf559beb4}
